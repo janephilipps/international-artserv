@@ -16,6 +16,12 @@ app.controller('NavbarCtrl', ['$scope', function ($scope) {
 
 }]);
 
+app.controller('EventCtrl', ['$scope', function ($scope) {
+
+  $scope.event = 'GALLERY OPENING!';
+
+}]);
+
 app.directive('appNavbar', function() {
   return {
     templateUrl: '../public/views/layouts/navbar.html',
