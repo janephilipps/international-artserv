@@ -13,15 +13,10 @@
     <script src="app.js"></script>
   </head>
   <body ng-app="artservApp">
-    <div ng-controller="MainCtrl">
-      <nav>
-        <ul>
-          <li id="add-event">+</li>
-          <li id="brand">International Artserv</li>
-          <li id="search">Search</li>
-        </ul>
-      </nav>
 
+    <div app-navbar></div>
+
+    <div ng-controller="MainCtrl">
       <div class="content">
         <ul>
           <li><a href="">alphabetical</a> |</li>
