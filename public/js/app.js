@@ -16,7 +16,7 @@ app.controller('NavbarCtrl', ['$scope', function ($scope) {
 
 }]);
 
-app.controller('EventCtrl', ['$scope', function ($scope) {
+app.controller('AddArtistCtrl', ['$scope', function ($scope) {
 
   $scope.event = 'GALLERY OPENING!';
 
@@ -35,9 +35,9 @@ app.config(['$routeProvider', function($routeProvider){
           templateUrl: '../public/views/home.html',
           controller: 'HomeCtrl'
         })
-        .when('/add-event', {
-          templateUrl: '../public/views/add-event.html',
-          controller: 'EventCtrl'
+        .when('/add-artist', {
+          templateUrl: '../public/views/add-artist.html',
+          controller: 'AddArtistCtrl'
         })
         .otherwise({
           redirectTo: '/home'

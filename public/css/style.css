@@ -93,3 +93,7 @@ nav button:hover {
   color: #FFF;
   text-decoration: none;
 }
+
+form#add-artist input {
+  display: block;
+}
