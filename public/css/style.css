@@ -35,11 +35,44 @@ li#add-event {
   text-align: center;
 }
 
+li#add-event:hover {
+  background-color: rgba(0,0,255,.5);
+}
+
+li#add-event:hover a {
+  color: #FFF;
+}
+
 nav a {
   font-size: 3em;
   margin: 0;
   color: #000;
   text-decoration: none;
+}
+
+nav input {
+  font-size: 2em;
+  width: 150px;
+  height: 41px;
+  border-left: 2px solid blue;
+  border-top: 2px solid blue;
+  border-bottom: 2px solid blue;
+  border-right: none;
+}
+
+nav button {
+  font-size: 2em;
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+  background-color: #FFF;
+  /*margin-left: 4px;*/
+}
+
+nav button:hover {
+  background-color: rgba(0,0,255,.5);
+  color: white;
 }
 
 .content {

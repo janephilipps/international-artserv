@@ -10,8 +10,8 @@ app.controller('NavbarCtrl', ['$scope', function ($scope) {
 
   $scope.nav = 'NAV';
 
-  $scope.addEvent = function () {
-    console.log('hi');
+  $scope.search = function () {
+    console.log('SEARCHING');
   }
 
 }]);
