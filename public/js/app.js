@@ -24,19 +24,19 @@ app.controller('AddArtistCtrl', ['$scope', function ($scope) {
 
 app.directive('appNavbar', function() {
   return {
-    templateUrl: '../public/views/layouts/navbar.html',
+    templateUrl: '/views/layouts/navbar.html',
     controller: 'NavbarCtrl'
   };
 });
 
 app.config(['$routeProvider', function($routeProvider){
       $routeProvider
-        .when('/home', {
-          templateUrl: '../public/views/home.html',
+        .when('/', {
+          templateUrl: '/views/home.html',
           controller: 'HomeCtrl'
         })
         .when('/add-artist', {
-          templateUrl: '../public/views/add-artist.html',
+          templateUrl: '/views/add-artist.html',
           controller: 'AddArtistCtrl'
         })
         .otherwise({
