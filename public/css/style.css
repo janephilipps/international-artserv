@@ -11,6 +11,11 @@ body {
   width: 100%;
   height: 600px;
 }
+
+.artist-border {
+  border: 2px dashed #FFF;
+}
+
 nav {
   height: 100px;
   margin: 0;

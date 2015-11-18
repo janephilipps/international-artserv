@@ -7,7 +7,7 @@
   </ul>
 
   <div>
-    <div ng-repeat="a in artists track by $index">
+    <div ng-repeat="a in artists track by $index" ng-class="artistExpandedClass($index)">
       <p ng-click="expandArtistInfo($index)">{{ a.firstName }} {{ a.lastName }}</p>
       <p ng-show="showArtistInfo($index)">{{ a.website }}</p>
     </div>

@@ -35,6 +35,14 @@ app.controller('HomeCtrl', ['$scope', function ($scope) {
     }
   }
 
+  $scope.artistExpandedClass = function (index) {
+    if ($scope.showArtistInfo(index)) {
+      return "artist-border";
+    } else {
+      return null;
+    }
+  }
+
   $scope.showArtistInfo = function (index) {
     return $scope.artistIndex === index;
   }
