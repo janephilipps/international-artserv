@@ -18,12 +18,29 @@ nav {
 }
 
 nav ul {
-  display: block;
   list-style-type: none;
+  display: table;
+  width: 100%;
+  padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
+  display: table-cell;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }
 
 li#add-event {
@@ -96,4 +113,34 @@ nav button:hover {
 
 form#add-artist input {
   display: block;
+  margin: 5px auto;
+  border: 2px solid #000;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.25em;
 }
+form#add-artist h2 {
+  display: inline-block;
+}
+
+form#add-artist select {
+  border: 2px solid #000;
+  font-size: 1.25em;
+  background-color: #FFF;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+form#add-artist input[type=submit] {
+  background-color: #FFF;
+}
+
+form#add-artist input[type=submit]:hover {
+  background-color: #000;
+  color: #FFF;
+}
+

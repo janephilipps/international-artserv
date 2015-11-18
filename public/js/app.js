@@ -4,6 +4,41 @@ app.controller('HomeCtrl', ['$scope', function ($scope) {
 
   $scope.test = 'hello';
 
+  $scope.artists = [{ firstName: 'Jane',
+                    lastName: 'Philipps',
+                    website: 'www.janephilipps.com',
+                    emailAddress: 'jane.philipps@gmail.com',
+                    city: 'San Francisco',
+                    country: 'USA',
+                    occupation: 'Artist'},
+                    { firstName: 'Erin',
+                    lastName: 'Mitchell',
+                    website: 'www.erin-mitchell.com/',
+                    emailAddress: 'erinleighmitchell1@gmail.com',
+                    city: 'San Francisco',
+                    country: 'USA',
+                    occupation: 'Artist'},
+                    { firstName: 'Jen',
+                    lastName: 'Hewett',
+                    website: 'http://jenhewett.com/',
+                    emailAddress: 'erinleighmitchell1@gmail.com',
+                    city: 'San Francisco',
+                    country: 'USA',
+                    occupation: 'Artist'}
+                    ];
+
+  $scope.expandArtistInfo = function (index) {
+    if ($scope.showArtistInfo(index)) {
+      $scope.artistIndex = null;
+    } else {
+      $scope.artistIndex = index;
+    }
+  }
+
+  $scope.showArtistInfo = function (index) {
+    return $scope.artistIndex === index;
+  }
+
 }]);
 
 app.controller('NavbarCtrl', ['$scope', function ($scope) {
@@ -40,6 +75,6 @@ app.config(['$routeProvider', function($routeProvider){
           controller: 'AddArtistCtrl'
         })
         .otherwise({
-          redirectTo: '/home'
+          redirectTo: '/'
         });
   }]);
