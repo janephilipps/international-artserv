@@ -50,33 +50,14 @@ app.controller('AddArtistCtrl', ['$scope', 'Artists', function ($scope, Artists)
 
   $scope.addArtist = function () {
     $scope.Artists.push($scope.artist);
+    $scope.artist = {};
+    alert('artist added!')
   }
 
 }]);
 
 app.factory('Artists', function () {
-  return [{ firstName: 'Jane',
-            lastName: 'Philipps',
-            website: 'www.janephilipps.com',
-            emailAddress: 'jane.philipps@gmail.com',
-            city: 'San Francisco',
-            country: 'USA',
-            occupation: 'Artist'},
-            { firstName: 'Erin',
-            lastName: 'Mitchell',
-            website: 'www.erin-mitchell.com/',
-            emailAddress: 'erinleighmitchell1@gmail.com',
-            city: 'San Francisco',
-            country: 'USA',
-            occupation: 'Artist'},
-            { firstName: 'Jen',
-            lastName: 'Hewett',
-            website: 'http://jenhewett.com/',
-            emailAddress: 'erinleighmitchell1@gmail.com',
-            city: 'San Francisco',
-            country: 'USA',
-            occupation: 'Artist'
-          }]
+  return [];
 });
 
 app.directive('appNavbar', function() {
