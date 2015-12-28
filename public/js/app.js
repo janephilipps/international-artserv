@@ -1,31 +1,10 @@
 var app = angular.module('artservApp', ['ngRoute']);
 
-app.controller('HomeCtrl', ['$scope', function ($scope) {
+app.controller('HomeCtrl', ['$scope', 'Artists', function ($scope, Artists) {
 
   $scope.test = 'hello';
 
-  $scope.artists = [{ firstName: 'Jane',
-                    lastName: 'Philipps',
-                    website: 'www.janephilipps.com',
-                    emailAddress: 'jane.philipps@gmail.com',
-                    city: 'San Francisco',
-                    country: 'USA',
-                    occupation: 'Artist'},
-                    { firstName: 'Erin',
-                    lastName: 'Mitchell',
-                    website: 'www.erin-mitchell.com/',
-                    emailAddress: 'erinleighmitchell1@gmail.com',
-                    city: 'San Francisco',
-                    country: 'USA',
-                    occupation: 'Artist'},
-                    { firstName: 'Jen',
-                    lastName: 'Hewett',
-                    website: 'http://jenhewett.com/',
-                    emailAddress: 'erinleighmitchell1@gmail.com',
-                    city: 'San Francisco',
-                    country: 'USA',
-                    occupation: 'Artist'}
-                    ];
+  $scope.Artists = Artists;
 
   $scope.expandArtistInfo = function (index) {
     if ($scope.showArtistInfo(index)) {
@@ -59,16 +38,67 @@ app.controller('NavbarCtrl', ['$scope', function ($scope) {
 
 }]);
 
-app.controller('AddArtistCtrl', ['$scope', function ($scope) {
+app.controller('FooterCtrl', ['$scope', function ($scope) {
+
+}]);
+
+app.controller('AddArtistCtrl', ['$scope', 'Artists', function ($scope, Artists) {
 
   $scope.event = 'GALLERY OPENING!';
 
+  $scope.Artists = Artists;
+
+  $scope.addArtist = function () {
+    console.log($scope.Artists);
+    $scope.Artists.push({
+      firstName: 'Michael',
+      lastName: 'Powell',
+      website: 'www.studiopowell.com',
+      emailAddress: 'michael.powell@gmail.com',
+      city: 'St. Louis',
+      country: 'USA',
+      occupation: 'Artist'
+    });
+  }
+
 }]);
+
+app.factory('Artists', function () {
+  return [{ firstName: 'Jane',
+            lastName: 'Philipps',
+            website: 'www.janephilipps.com',
+            emailAddress: 'jane.philipps@gmail.com',
+            city: 'San Francisco',
+            country: 'USA',
+            occupation: 'Artist'},
+            { firstName: 'Erin',
+            lastName: 'Mitchell',
+            website: 'www.erin-mitchell.com/',
+            emailAddress: 'erinleighmitchell1@gmail.com',
+            city: 'San Francisco',
+            country: 'USA',
+            occupation: 'Artist'},
+            { firstName: 'Jen',
+            lastName: 'Hewett',
+            website: 'http://jenhewett.com/',
+            emailAddress: 'erinleighmitchell1@gmail.com',
+            city: 'San Francisco',
+            country: 'USA',
+            occupation: 'Artist'
+          }]
+});
 
 app.directive('appNavbar', function() {
   return {
     templateUrl: '/views/layouts/navbar.html',
     controller: 'NavbarCtrl'
+  };
+});
+
+app.directive('appFooter', function() {
+  return {
+    templateUrl: '/views/layouts/footer.html',
+    controller: 'FooterCtrl'
   };
 });
 

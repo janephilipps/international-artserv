@@ -19,7 +19,10 @@ body {
 nav {
   height: 100px;
   margin: 0;
-  padding: 0;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-bottom: 10px double #000;
+  border-top: 10px double blue;
 }
 
 nav ul {
@@ -147,5 +150,37 @@ form#add-artist input[type=submit] {
 form#add-artist input[type=submit]:hover {
   background-color: #000;
   color: #FFF;
+}
+
+footer {
+  background-color: blue;
+  color: #FFF;
+  height: 6em;
+  border-top: 10px double #FFF;
+}
+
+footer a {
+  font-size: 2em;
+  margin: 0;
+  color: #FFF;
+  text-decoration: none;
+}
+
+footer ul {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  list-style-type: none;
+}
+
+footer ul li {
+  display: table-cell;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
 }
 
