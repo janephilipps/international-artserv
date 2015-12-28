@@ -44,21 +44,12 @@ app.controller('FooterCtrl', ['$scope', function ($scope) {
 
 app.controller('AddArtistCtrl', ['$scope', 'Artists', function ($scope, Artists) {
 
-  $scope.event = 'GALLERY OPENING!';
-
   $scope.Artists = Artists;
 
+  $scope.artist = {};
+
   $scope.addArtist = function () {
-    console.log($scope.Artists);
-    $scope.Artists.push({
-      firstName: 'Michael',
-      lastName: 'Powell',
-      website: 'www.studiopowell.com',
-      emailAddress: 'michael.powell@gmail.com',
-      city: 'St. Louis',
-      country: 'USA',
-      occupation: 'Artist'
-    });
+    $scope.Artists.push($scope.artist);
   }
 
 }]);
