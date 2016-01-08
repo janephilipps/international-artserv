@@ -1,8 +1,10 @@
-angular.module('HomeCtrl', []).controller('HomeController', function($scope, Artists) {
+angular.module('HomeCtrl', ['ArtistsService']).controller('HomeController', ['$scope', 'Artists', function($scope, Artists) {
 
   $scope.test = 'hello';
 
-  $scope.Artists = Artists;
+  Artists.all().success(function(artists) {
+    $scope.Artists = artists;
+  })
 
   $scope.expandArtistInfo = function (index) {
     if ($scope.showArtistInfo(index)) {
@@ -24,4 +26,4 @@ angular.module('HomeCtrl', []).controller('HomeController', function($scope, Art
     return $scope.artistIndex === index;
   }
 
-});
+}]);

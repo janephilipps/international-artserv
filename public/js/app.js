@@ -1,4 +1,4 @@
-var app = angular.module('artservApp', ['ngRoute', 'appRoutes', 'HomeCtrl', 'AddArtistCtrl', 'ArtistsService']);
+var app = angular.module('artservApp', ['ngRoute', 'appRoutes', 'HomeCtrl', 'AddArtistCtrl']);
 
 app.directive('appNavbar', function() {
   return {
