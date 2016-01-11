@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.get('/api/artists', function(req, res) {
     Artist.find(function(err, artists) {
       handleError(res, err, function() {
-        res.json(artists)
+        res.json(artists);
       });
     });
   });
@@ -21,19 +21,19 @@ module.exports = function(app) {
   app.get('/api/artists/:id', function(req, res) {
     Artist.findById(req.params.id, function(err, artist) {
       handleError(res, err, function() {
-        res.json(artist)
+        res.json(artist);
       });
     });
   });
 
-  // app.post('/api/artists'), function(req, res) {
-  //   Artist.find(function(err, artists) {
-  //     if (err) {
-  //       res.send(err);
-  //     }
-  //     res.json(artists);
-  //   });
-  // });
+  app.post('/api/artists', function(req, res) {
+    console.log(req.body);
+    Artist.create(req.body, function(err, artist) {
+      handleError(res, err, function() {
+        res.json(artist);
+      });
+    });
+  });
 
   app.get('*', function(req, res) {
     res.sendfile('./public/views/index.html');
