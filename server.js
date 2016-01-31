@@ -3,6 +3,7 @@ var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose       = require('mongoose');
+var passport       = require('passport');
 
 var db = require('./config/db');
 
@@ -19,6 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.use(express.static(__dirname + '/public'));
+
+app.use(passport.initialize());
 
 require('./app/routes')(app);
 

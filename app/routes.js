@@ -1,4 +1,7 @@
 var Artist = require('./models/artist');
+var passport = require('passport');
+
+require('../config/passport')(passport);
 
 module.exports = function(app) {
 
@@ -9,6 +12,10 @@ module.exports = function(app) {
       onSuccess();
     }
   }
+
+  app.post('/api/signup', passport.authenticate('local-signup'), function(req, res) {
+    res.send(req.user);
+  });
 
   app.get('/api/artists', function(req, res) {
     Artist.find(function(err, artists) {
