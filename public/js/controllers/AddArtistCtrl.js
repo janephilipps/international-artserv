@@ -1,4 +1,4 @@
-angular.module('AddArtistCtrl', []).controller('AddArtistController', function($scope, Artists) {
+angular.module('AddArtistCtrl', ['ArtistsService']).controller('AddArtistController', function($scope, Artists) {
 
   $scope.artist = {};
 
