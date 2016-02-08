@@ -9,6 +9,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     .when('/add-artist', {
       templateUrl: 'views/add-artist.html',
       controller: 'AddArtistController'
+    })
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'LoginController'
     });
 
   $locationProvider.html5Mode(true);

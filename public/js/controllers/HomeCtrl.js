@@ -1,7 +1,5 @@
 angular.module('HomeCtrl', ['ArtistsService']).controller('HomeController', ['$scope', 'Artists', function($scope, Artists) {
 
-  $scope.test = 'hello';
-
   Artists.all().success(function(artists) {
     $scope.Artists = artists;
   })
