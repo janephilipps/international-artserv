@@ -20,13 +20,10 @@ module.exports = function(passport) {
     passReqToCallback: true
   },
   function(req, email, password, done) {
-    console.log('email :' + email);
-    console.log('password :' + password);
     User.findOne({ email: email }, function(err, user) {
       if (err) {
         return done(err);
       } else if (user) {
-        console.log('user: ' + user);
         return done(null, false);
       } else {
         var newUser = new User();
@@ -35,13 +32,32 @@ module.exports = function(passport) {
         newUser.passwordHash = newUser.generateHash(password);
         newUser.save(function(err) {
           if (err) {
-            console.log('error: ' + err)
             throw err;
           } else {
-            console.log('it worked!');
             return done(null, newUser);
           }
         })
+      }
+    });
+  }));
+
+  passport.use('local-login', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+  },
+  function(req, email, password, done) {
+    User.findOne({ email: email }, function(err, user) {
+      if (err) {
+        return done(err);
+      } else if (!user) {
+        return done(null, false);
+      } else {
+        if (user.validatePassword(password)) {
+          return done(null, user);
+        } else {
+          return done(null, false);
+        }
       }
     });
   }));

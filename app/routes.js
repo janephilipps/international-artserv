@@ -17,6 +17,10 @@ module.exports = function(app) {
     res.send(req.user);
   });
 
+  app.post('/api/login', passport.authenticate('local-login'), function(req, res) {
+    res.send(req.user);
+  });
+
   app.get('/api/artists', function(req, res) {
     Artist.find(function(err, artists) {
       handleError(res, err, function() {
