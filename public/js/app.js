@@ -3,12 +3,14 @@ var app = angular.module('artservApp', [
   'appRoutes',
   'HomeCtrl',
   'AddArtistCtrl',
-  'LoginCtrl'
+  'LoginCtrl',
+  'NavbarCtrl'
   ]);
 
 app.directive('appNavbar', function() {
   return {
-    templateUrl: '/views/layouts/navbar.html'
+    templateUrl: '/views/layouts/navbar.html',
+    controller: 'NavbarController'
   };
 });
 
